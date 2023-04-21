@@ -1,0 +1,16 @@
+[package]
+name = "remote_module"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[features]
+upper = []
+lower = []
+
+[dependencies]
+
+[package.metadata.cargo-all-features]
+# Features "foo" and "bar" are incompatible, so skip permutations including them
+skip_feature_sets = [["upper", "lower"]]
